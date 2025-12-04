@@ -47,20 +47,21 @@ class Filter extends QueryHelper
     }
 
     /**
-     * Creates a number filter instance after checking validity.
+     * Creates a text/rich_text filter instance after checking validity.
      *
-     * @see https://developers.notion.com/reference/post-database-query#text-filter-condition
+     * @see https://developers.notion.com/reference/post-database-query#filter-condition-object
      *
      * @param  string  $property
      * @param  string  $comparisonOperator
-     * @param  $value
+     * @param  string  $value
      * @return Filter
      */
     public static function textFilter(string $property, string $comparisonOperator, string $value): Filter
     {
-        self::isValidComparisonOperatorFor('text', $comparisonOperator);
+        // For Notion API 2025-09-03, text properties use 'rich_text' filter type
+        self::isValidComparisonOperatorFor('rich_text', $comparisonOperator);
 
-        return new Filter($property, 'text', [$comparisonOperator => $value]);
+        return new Filter($property, 'rich_text', [$comparisonOperator => $value]);
     }
 
     /**

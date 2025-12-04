@@ -40,6 +40,8 @@ class Operators
         switch ($filterType) {
             case 'text':
                 return Operators::text();
+            case 'rich_text':
+                return Operators::richText();
             case 'number':
                 return Operators::number();
             default:
@@ -48,6 +50,20 @@ class Operators
     }
 
     private static function text()
+    {
+        return [
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::STARTS_WITH,
+            Operators::ENDS_WITH,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function richText()
     {
         return [
             Operators::EQUALS,
