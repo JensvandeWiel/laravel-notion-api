@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Macros;
+namespace Jensvandewiel\LaravelNotionApi\Macros;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Client\Request;

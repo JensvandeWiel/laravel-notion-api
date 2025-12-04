@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Builder;
+namespace Jensvandewiel\LaravelNotionApi\Builder;
 
-use FiveamCode\LaravelNotionApi\Entities\Properties\Property;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Property;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 
 /**
  * Class PropertyBuilder.

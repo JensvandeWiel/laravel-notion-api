@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Traits;
+namespace Jensvandewiel\LaravelNotionApi\Traits;
 
 use Illuminate\Support\Arr;
 

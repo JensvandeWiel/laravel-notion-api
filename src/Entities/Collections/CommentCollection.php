@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Collections;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Collections;
 
-use FiveamCode\LaravelNotionApi\Entities\Comment;
+use Jensvandewiel\LaravelNotionApi\Entities\Comment;
 use Illuminate\Support\Collection;
 
 /**

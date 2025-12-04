@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
-use FiveamCode\LaravelNotionApi\Entities\Contracts\Modifiable;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Entities\Contracts\Modifiable;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 
 /**
  * Class Text.

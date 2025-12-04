@@ -1,14 +1,14 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities;
+namespace Jensvandewiel\LaravelNotionApi\Entities;
 
-use FiveamCode\LaravelNotionApi\Entities\Properties\Property;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Traits\HasArchive;
-use FiveamCode\LaravelNotionApi\Traits\HasParent;
-use FiveamCode\LaravelNotionApi\Traits\HasTimestamps;
-use FiveamCode\LaravelNotionApi\Traits\HasTitle;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Property;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Traits\HasArchive;
+use Jensvandewiel\LaravelNotionApi\Traits\HasParent;
+use Jensvandewiel\LaravelNotionApi\Traits\HasTimestamps;
+use Jensvandewiel\LaravelNotionApi\Traits\HasTitle;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

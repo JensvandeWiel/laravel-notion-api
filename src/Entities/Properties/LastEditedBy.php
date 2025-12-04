@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
-use FiveamCode\LaravelNotionApi\Entities\User;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 
 /**
  * Class LastEditedBy.

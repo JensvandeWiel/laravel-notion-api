@@ -1,12 +1,12 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Blocks;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Blocks;
 
-use FiveamCode\LaravelNotionApi\Entities\Entity;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Traits\HasArchive;
-use FiveamCode\LaravelNotionApi\Traits\HasParent;
-use FiveamCode\LaravelNotionApi\Traits\HasTimestamps;
+use Jensvandewiel\LaravelNotionApi\Entities\Entity;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Traits\HasArchive;
+use Jensvandewiel\LaravelNotionApi\Traits\HasParent;
+use Jensvandewiel\LaravelNotionApi\Traits\HasTimestamps;
 use Illuminate\Support\Arr;
 
 /**
@@ -45,7 +45,7 @@ class Block extends Entity
      * @param  array  $responseData
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     protected function setResponseData(array $responseData): void
     {
@@ -178,7 +178,7 @@ class Block extends Entity
             case 'quote':
                 $class = str_replace('_', '', ucwords($type, '_'));
 
-                return 'FiveamCode\\LaravelNotionApi\\Entities\\Blocks\\'.$class;
+                return 'Jensvandewiel\\LaravelNotionApi\\Entities\\Blocks\\'.$class;
             case 'heading_1':
                 return HeadingOne::class;
             case 'heading_2':

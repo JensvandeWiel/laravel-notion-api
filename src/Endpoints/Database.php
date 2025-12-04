@@ -1,15 +1,15 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\EntityCollection;
-use FiveamCode\LaravelNotionApi\Entities\Collections\PageCollection;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Notion;
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\FilterBag;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
-use FiveamCode\LaravelNotionApi\Query\Sorting;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\EntityCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\PageCollection;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\FilterBag;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Query\Sorting;
 use Illuminate\Support\Collection;
 
 /**
@@ -42,8 +42,8 @@ class Database extends Endpoint
      * @param  string  $databaseId
      * @param  Notion  $notion
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\LaravelNotionAPIException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\LaravelNotionAPIException
      */
     public function __construct(string $databaseId, Notion $notion)
     {
@@ -57,8 +57,8 @@ class Database extends Endpoint
     /**
      * @return PageCollection
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     public function query(): PageCollection
     {

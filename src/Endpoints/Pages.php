@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 
 /**
  * Class Pages.

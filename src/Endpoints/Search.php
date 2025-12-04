@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\EntityCollection;
-use FiveamCode\LaravelNotionApi\Notion;
-use FiveamCode\LaravelNotionApi\Query\Sorting;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\EntityCollection;
+use Jensvandewiel\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Query\Sorting;
 use Illuminate\Support\Collection;
 
 /**
@@ -33,8 +33,8 @@ class Search extends Endpoint
      * @param  Notion  $notion
      * @param  string  $searchText
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\LaravelNotionAPIException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\LaravelNotionAPIException
      */
     public function __construct(Notion $notion, string $searchText = '')
     {
@@ -45,8 +45,8 @@ class Search extends Endpoint
     /**
      * @return EntityCollection
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     public function query(): EntityCollection
     {
@@ -116,8 +116,8 @@ class Search extends Endpoint
     /**
      * @return Collection
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     public function getTitles(): Collection
     {
@@ -134,8 +134,8 @@ class Search extends Endpoint
     /**
      * @return Collection
      *
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     public function getIds(): Collection
     {

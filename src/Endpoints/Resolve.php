@@ -1,18 +1,18 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Block;
-use FiveamCode\LaravelNotionApi\Entities\Database;
-use FiveamCode\LaravelNotionApi\Entities\Entity;
-use FiveamCode\LaravelNotionApi\Entities\NotionParent;
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Relation;
-use FiveamCode\LaravelNotionApi\Entities\User;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
-use FiveamCode\LaravelNotionApi\Notion;
-use FiveamCode\LaravelNotionApi\Traits\HasParent;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block;
+use Jensvandewiel\LaravelNotionApi\Entities\Database;
+use Jensvandewiel\LaravelNotionApi\Entities\Entity;
+use Jensvandewiel\LaravelNotionApi\Entities\NotionParent;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Relation;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Traits\HasParent;
 use Illuminate\Support\Collection;
 
 /**
@@ -26,7 +26,7 @@ class Resolve extends Endpoint
      * @param  Notion  $notion
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\LaravelNotionAPIException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\LaravelNotionAPIException
      */
     public function __construct(Notion $notion)
     {

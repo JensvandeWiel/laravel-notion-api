@@ -1,13 +1,13 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Collections;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Collections;
 
-use FiveamCode\LaravelNotionApi\Entities\Database;
-use FiveamCode\LaravelNotionApi\Entities\Entity;
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
-use FiveamCode\LaravelNotionApi\Query\StartCursor;
+use Jensvandewiel\LaravelNotionApi\Entities\Database;
+use Jensvandewiel\LaravelNotionApi\Entities\Entity;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Query\StartCursor;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

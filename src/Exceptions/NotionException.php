@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Exceptions;
+namespace Jensvandewiel\LaravelNotionApi\Exceptions;
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Arr;

@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Query\Filters;
+namespace Jensvandewiel\LaravelNotionApi\Query\Filters;
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Query\QueryHelper;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Query\QueryHelper;
 use Illuminate\Support\Collection;
 use Throwable;
 

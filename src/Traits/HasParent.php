@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Traits;
+namespace Jensvandewiel\LaravelNotionApi\Traits;
 
-use FiveamCode\LaravelNotionApi\Entities\NotionParent;
+use Jensvandewiel\LaravelNotionApi\Entities\NotionParent;
 use Illuminate\Support\Arr;
 
 /**

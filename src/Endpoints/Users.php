@@ -1,11 +1,11 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\UserCollection;
-use FiveamCode\LaravelNotionApi\Entities\User;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\UserCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 
 /**
  * Class Users.

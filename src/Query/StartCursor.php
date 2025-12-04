@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Query;
+namespace Jensvandewiel\LaravelNotionApi\Query;
 
 /**
  * Class StartCursor.

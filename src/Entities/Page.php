@@ -1,25 +1,25 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities;
+namespace Jensvandewiel\LaravelNotionApi\Entities;
 
 use DateTime;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Checkbox;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Date;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Email;
-use FiveamCode\LaravelNotionApi\Entities\Properties\MultiSelect;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Number;
-use FiveamCode\LaravelNotionApi\Entities\Properties\People;
-use FiveamCode\LaravelNotionApi\Entities\Properties\PhoneNumber;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Property;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Relation;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Select;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Text;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Title;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Url;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Traits\HasArchive;
-use FiveamCode\LaravelNotionApi\Traits\HasParent;
-use FiveamCode\LaravelNotionApi\Traits\HasTimestamps;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Checkbox;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Date;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Email;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\MultiSelect;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Number;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\People;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\PhoneNumber;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Property;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Relation;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Select;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Text;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Title;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Url;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Traits\HasArchive;
+use Jensvandewiel\LaravelNotionApi\Traits\HasParent;
+use Jensvandewiel\LaravelNotionApi\Traits\HasTimestamps;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
@@ -98,7 +98,7 @@ class Page extends Entity
      * @param  array  $responseData
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     protected function setResponseData(array $responseData): void
     {

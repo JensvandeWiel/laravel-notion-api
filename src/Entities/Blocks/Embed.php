@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Blocks;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Blocks;
 
-use FiveamCode\LaravelNotionApi\Entities\Contracts\Modifiable;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Entities\Contracts\Modifiable;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
 
 /**
  * Class Paragraph.

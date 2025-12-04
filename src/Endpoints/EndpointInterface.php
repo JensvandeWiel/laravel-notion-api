@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Entity;
+use Jensvandewiel\LaravelNotionApi\Entities\Entity;
 
 /**
  * Interface EndpointInterface.

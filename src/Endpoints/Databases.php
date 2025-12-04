@@ -1,12 +1,12 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Builder\DatabaseBuilder;
-use FiveamCode\LaravelNotionApi\Entities\Collections\DatabaseCollection;
-use FiveamCode\LaravelNotionApi\Entities\Database;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Builder\DatabaseBuilder;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\DatabaseCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Database;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 
 /**
  * Class Databases.

@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Builder;
+namespace Jensvandewiel\LaravelNotionApi\Builder;
 
 use Illuminate\Support\Collection;
 

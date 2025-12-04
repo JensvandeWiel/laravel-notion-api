@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Collections;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Collections;
 
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Block;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block;
 use Illuminate\Support\Collection;
 
 /**

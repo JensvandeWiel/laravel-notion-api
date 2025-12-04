@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Query;
+namespace Jensvandewiel\LaravelNotionApi\Query;
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Support\Collection;
 
 /**

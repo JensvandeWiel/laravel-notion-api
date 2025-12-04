@@ -1,17 +1,17 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi;
+namespace Jensvandewiel\LaravelNotionApi;
 
-use FiveamCode\LaravelNotionApi\Endpoints\Block;
-use FiveamCode\LaravelNotionApi\Endpoints\Comments;
-use FiveamCode\LaravelNotionApi\Endpoints\Database;
-use FiveamCode\LaravelNotionApi\Endpoints\Databases;
-use FiveamCode\LaravelNotionApi\Endpoints\Endpoint;
-use FiveamCode\LaravelNotionApi\Endpoints\Pages;
-use FiveamCode\LaravelNotionApi\Endpoints\Resolve;
-use FiveamCode\LaravelNotionApi\Endpoints\Search;
-use FiveamCode\LaravelNotionApi\Endpoints\Users;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Block;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Comments;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Database;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Databases;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Endpoint;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Pages;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Resolve;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Search;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Users;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;

@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Query\Filters;
+namespace Jensvandewiel\LaravelNotionApi\Query\Filters;
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 
 class Operators
 {

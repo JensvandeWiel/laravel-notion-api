@@ -1,12 +1,12 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Block as BlockEntity;
-use FiveamCode\LaravelNotionApi\Entities\Collections\BlockCollection;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
-use FiveamCode\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block as BlockEntity;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\BlockCollection;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Notion;
 
 /**
  * Class Block.
@@ -25,7 +25,7 @@ class Block extends Endpoint
      * @param  string  $blockId
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\LaravelNotionAPIException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\LaravelNotionAPIException
      */
     public function __construct(Notion $notion, string $blockId)
     {
@@ -77,7 +77,7 @@ class Block extends Endpoint
      * url: https://api.notion.com/{version}/blocks/{block_id}/children [patch]
      * notion-api-docs: https://developers.notion.com/reference/patch-block-children.
      *
-     * @return FiveamCode\LaravelNotionApi\Entities\Blocks\Block
+     * @return Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block
      *
      * @throws HandlingException
      */
@@ -117,7 +117,7 @@ class Block extends Endpoint
      * url: https://api.notion.com/{version}/blocks/{block_id} [patch]
      * notion-api-docs: https://developers.notion.com/reference/update-a-block.
      *
-     * @return FiveamCode\LaravelNotionApi\Entities\Blocks\Block
+     * @return Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block
      *
      * @throws HandlingException
      */

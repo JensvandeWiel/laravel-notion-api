@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Traits;
+namespace Jensvandewiel\LaravelNotionApi\Traits;
 
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
 use Illuminate\Support\Arr;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi;
+namespace Jensvandewiel\LaravelNotionApi;
 
-use FiveamCode\LaravelNotionApi\Macros\PestHttpRecorder;
+use Jensvandewiel\LaravelNotionApi\Macros\PestHttpRecorder;
 use Illuminate\Support\ServiceProvider;
 
 /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities;
+namespace Jensvandewiel\LaravelNotionApi\Entities;
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Arr;
 use JsonSerializable;
 
@@ -82,16 +82,16 @@ class Entity implements JsonSerializable
     private function fillTraitAttributes(): void
     {
         $traitMapping = [
-            'FiveamCode\LaravelNotionApi\Traits\HasTimestamps' => function ($entity) {
+            'Jensvandewiel\LaravelNotionApi\Traits\HasTimestamps' => function ($entity) {
                 $entity->fillTimestampableAttributes();
             },
-            'FiveamCode\LaravelNotionApi\Traits\HasParent' => function ($entity) {
+            'Jensvandewiel\LaravelNotionApi\Traits\HasParent' => function ($entity) {
                 $entity->fillParentAttributes();
             },
-            'FiveamCode\LaravelNotionApi\Traits\HasArchive' => function ($entity) {
+            'Jensvandewiel\LaravelNotionApi\Traits\HasArchive' => function ($entity) {
                 $entity->fillArchivedAttributes();
             },
-            'FiveamCode\LaravelNotionApi\Traits\HasTitle' => function ($entity) {
+            'Jensvandewiel\LaravelNotionApi\Traits\HasTitle' => function ($entity) {
                 $entity->fillTitleAttributes();
             },
         ];

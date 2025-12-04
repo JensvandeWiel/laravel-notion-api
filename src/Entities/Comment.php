@@ -1,11 +1,11 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities;
+namespace Jensvandewiel\LaravelNotionApi\Entities;
 
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Traits\HasParent;
-use FiveamCode\LaravelNotionApi\Traits\HasTimestamps;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Traits\HasParent;
+use Jensvandewiel\LaravelNotionApi\Traits\HasTimestamps;
 use Illuminate\Support\Arr;
 
 /**
@@ -64,7 +64,7 @@ class Comment extends Entity
      * @param  array  $responseData
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\NotionException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\NotionException
      */
     protected function setResponseData(array $responseData): void
     {

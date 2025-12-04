@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Builder;
+namespace Jensvandewiel\LaravelNotionApi\Builder;
 
-use FiveamCode\LaravelNotionApi\Endpoints\Databases;
-use FiveamCode\LaravelNotionApi\Entities\Database;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Databases;
+use Jensvandewiel\LaravelNotionApi\Entities\Database;
 use Illuminate\Support\Collection;
 
 /**

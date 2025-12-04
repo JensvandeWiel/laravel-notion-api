@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
-use FiveamCode\LaravelNotionApi\Entities\Entity;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Entities\Entity;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Support\Arr;
 
 /**
@@ -205,7 +205,7 @@ class Property extends Entity
             case 'relation':
                 $class = str_replace('_', '', ucwords($type, '_'));
 
-                return 'FiveamCode\\LaravelNotionApi\\Entities\\Properties\\'.$class;
+                return 'Jensvandewiel\\LaravelNotionApi\\Entities\\Properties\\'.$class;
             case 'text':
             case 'rich_text':
                 // TODO: Depending on the Notion API version.

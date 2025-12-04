@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
 use Illuminate\Support\Collection;
 

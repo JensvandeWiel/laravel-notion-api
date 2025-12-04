@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
 use DateTime;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichDate;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichDate;
 use Illuminate\Support\Arr;
 
 /**

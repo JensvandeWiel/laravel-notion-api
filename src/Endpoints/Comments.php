@@ -1,12 +1,12 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Endpoints;
+namespace Jensvandewiel\LaravelNotionApi\Endpoints;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\CommentCollection;
-use FiveamCode\LaravelNotionApi\Entities\Comment as CommentEntity;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
-use FiveamCode\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\CommentCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Comment as CommentEntity;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Notion;
 
 /**
  * Class Comments.
@@ -30,7 +30,7 @@ class Comments extends Endpoint
      * @param  string  $blockId
      *
      * @throws HandlingException
-     * @throws \FiveamCode\LaravelNotionApi\Exceptions\LaravelNotionAPIException
+     * @throws \Jensvandewiel\LaravelNotionApi\Exceptions\LaravelNotionAPIException
      */
     public function __construct(Notion $notion)
     {

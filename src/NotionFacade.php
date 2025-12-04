@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi;
+namespace Jensvandewiel\LaravelNotionApi;
 
 use Illuminate\Support\Facades\Facade;
 

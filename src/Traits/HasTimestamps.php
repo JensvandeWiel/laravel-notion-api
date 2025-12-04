@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Traits;
+namespace Jensvandewiel\LaravelNotionApi\Traits;
 
 use Carbon\Carbon;
 use DateTime;
-use FiveamCode\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
 use Illuminate\Support\Arr;
 
 /**

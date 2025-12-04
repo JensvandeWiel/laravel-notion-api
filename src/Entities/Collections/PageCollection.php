@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Collections;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Collections;
 
-use FiveamCode\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
 use Illuminate\Support\Collection;
 
 /**

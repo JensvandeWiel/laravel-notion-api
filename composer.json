@@ -1,5 +1,5 @@
 {
-    "name": "fiveam-code/laravel-notion-api",
+    "name": "jensvandewiel/laravel-notion-api",
     "description": "Laravel Wrapper for the Notion API",
     "keywords": [
         "fiveam-code",
@@ -37,14 +37,14 @@
     },
     "autoload": {
         "psr-4": {
-            "FiveamCode\\LaravelNotionApi\\": "src",
-            "FiveamCode\\LaravelNotionApi\\Exceptions\\": "src/Exceptions",
-            "FiveamCode\\LaravelNotionApi\\Endpoints\\": "src/Endpoints"
+            "Jensvandewiel\\LaravelNotionApi\\": "src",
+            "Jensvandewiel\\LaravelNotionApi\\Exceptions\\": "src/Exceptions",
+            "Jensvandewiel\\LaravelNotionApi\\Endpoints\\": "src/Endpoints"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FiveamCode\\LaravelNotionApi\\Tests\\": "tests"
+            "Jensvandewiel\\LaravelNotionApi\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FiveamCode\\LaravelNotionApi\\LaravelNotionApiServiceProvider"
+                "Jensvandewiel\\LaravelNotionApi\\LaravelNotionApiServiceProvider"
             ],
             "aliases": {
-                "Notion": "FiveamCode\\LaravelNotionApi\\NotionFacade"
+                "Notion": "Jensvandewiel\\LaravelNotionApi\\NotionFacade"
             }
         }
     }

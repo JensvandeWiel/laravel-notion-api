@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Contracts;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Contracts;
 
 interface Modifiable
 {

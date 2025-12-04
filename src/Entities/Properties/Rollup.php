@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Properties;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
 use DateTime;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichDate;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichDate;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

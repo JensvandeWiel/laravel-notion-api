@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Exceptions;
+namespace Jensvandewiel\LaravelNotionApi\Exceptions;
 
 use Exception;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Entities\Blocks;
+namespace Jensvandewiel\LaravelNotionApi\Entities\Blocks;
 
 /**
  * Class Toggle.
