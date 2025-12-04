@@ -61,7 +61,12 @@ class TextBlock extends Block implements Modifiable
 
     protected function fillContent(): void
     {
-        $this->content = new RichText($this->rawContent['text']);
+        // Support both v1 (text) and v2 (rich_text) API versions
+        if (isset($this->rawContent['rich_text'])) {
+            $this->content = new RichText($this->rawContent['rich_text']);
+        } elseif (isset($this->rawContent['text'])) {
+            $this->content = new RichText($this->rawContent['text']);
+        }
         $this->text = $this->getContent()->getPlainText();
     }
 

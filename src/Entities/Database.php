@@ -79,6 +79,11 @@ class Database extends Entity
      */
     protected Collection $properties;
 
+    /**
+     * @var Collection|null
+     */
+    protected ?Collection $dataSources = null;
+
     protected function setResponseData(array $responseData): void
     {
         parent::setResponseData($responseData);
@@ -237,6 +242,43 @@ class Database extends Entity
     public function getProperties(): Collection
     {
         return $this->properties;
+    }
+
+    /**
+     * Get all data sources for this database.
+     * Returns null if the database does not have data_sources field (v1 response).
+     *
+     * @return Collection|null
+     */
+    public function getDataSources(): ?Collection
+    {
+        return $this->dataSources;
+    }
+
+    /**
+     * Get the first (or only) data source for this database.
+     * Useful for single-source databases.
+     *
+     * @return DataSource|null
+     */
+    public function getPrimaryDataSource(): ?DataSource
+    {
+        if ($this->dataSources === null || $this->dataSources->isEmpty()) {
+            return null;
+        }
+
+        $first = $this->dataSources->first();
+        return $first instanceof DataSource ? $first : null;
+    }
+
+    /**
+     * Check if this database has data sources (multi-source or v2025+ API).
+     *
+     * @return bool
+     */
+    public function hasDataSources(): bool
+    {
+        return $this->dataSources !== null && $this->dataSources->count() > 0;
     }
 
     /**

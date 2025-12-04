@@ -6,6 +6,7 @@ use Jensvandewiel\LaravelNotionApi\Endpoints\Block;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Comments;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Database;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Databases;
+use Jensvandewiel\LaravelNotionApi\Endpoints\DataSources;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Endpoint;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Pages;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Resolve;
@@ -131,6 +132,28 @@ class Notion
     }
 
     /**
+     * @return DataSources
+     *
+     * @throws HandlingException
+     */
+    public function dataSources(): DataSources
+    {
+        return new DataSources($this);
+    }
+
+    /**
+     * @param  string  $dataSourceId
+     * @return \Jensvandewiel\LaravelNotionApi\Endpoints\DataSource
+     *
+     * @throws Exceptions\LaravelNotionAPIException
+     * @throws HandlingException
+     */
+    public function dataSource(string $dataSourceId): \Jensvandewiel\LaravelNotionApi\Endpoints\DataSource
+    {
+        return new \Jensvandewiel\LaravelNotionApi\Endpoints\DataSource($dataSourceId, $this);
+    }
+
+    /**
      * @param  string  $databaseId
      * @return Database
      *
@@ -248,7 +271,10 @@ class Notion
      * Due to the inconsistency of the Notion API requiring an endpoint url
      * with v* as well as a dated version in the request header, this method
      * maps the given version (e.g. v1) to the version date Notion requires
-     * in the header (e.g. "2021-05-13").
+     * in the header (e.g. "2025-09-03").
+     *
+     * Version mapping:
+     * - v1: 2025-09-03 (latest API version with rich_text properties and multi-source databases)
      *
      * @return string
      *
@@ -258,7 +284,7 @@ class Notion
     {
         switch ($this->version) {
             case 'v1':
-                return '2021-05-13';
+                return '2025-09-03';
             default:
                 throw new HandlingException('Invalid version.');
         }
