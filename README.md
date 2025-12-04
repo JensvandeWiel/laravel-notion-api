@@ -1,5 +1,7 @@
 <h1 align="center"> Notion for Laravel</h1>
 
+<h2 align="center">:warning: Incomplete api, please contribute <3 :warning:</h2>
+
 <div align="center">
 <img src="https://notionforlaravel.com/images/open-graph.png" alt="Notion For Laravel" width="500">
 

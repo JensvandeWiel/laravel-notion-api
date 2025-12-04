@@ -44,23 +44,33 @@ class Operators
                 return Operators::richText();
             case 'number':
                 return Operators::number();
+            case 'checkbox':
+                return Operators::checkbox();
+            case 'date':
+                return Operators::date();
+            case 'files':
+                return Operators::files();
+            case 'multi_select':
+                return Operators::multiSelect();
+            case 'select':
+                return Operators::select();
+            case 'status':
+                return Operators::status();
+            case 'people':
+                return Operators::people();
+            case 'relation':
+                return Operators::relation();
+            case 'phone_number':
+                return Operators::phoneNumber();
+            case 'email':
+                return Operators::email();
+            case 'url':
+                return Operators::url();
+            case 'unique_id':
+                return Operators::uniqueId();
             default:
                 throw HandlingException::instance('Invalid filterType.', compact('filterType'));
         }
-    }
-
-    private static function text()
-    {
-        return [
-            Operators::EQUALS,
-            Operators::DOES_NOT_EQUAL,
-            Operators::CONTAINS,
-            Operators::DOES_NOT_CONTAIN,
-            Operators::STARTS_WITH,
-            Operators::ENDS_WITH,
-            Operators::IS_EMPTY,
-            Operators::IS_NOT_EMPTY,
-        ];
     }
 
     private static function richText()
@@ -88,6 +98,146 @@ class Operators
             Operators::LESS_THAN_OR_EQUAL_TO,
             Operators::IS_EMPTY,
             Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function checkbox()
+    {
+        return [
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+        ];
+    }
+
+    private static function date()
+    {
+        return [
+            Operators::AFTER,
+            Operators::BEFORE,
+            Operators::EQUALS,
+            Operators::ON_OR_BEFORE,
+            Operators::ON_OR_AFTER,
+            'next_week',
+            'next_month',
+            'next_year',
+            'past_week',
+            'past_month',
+            'past_year',
+            'this_week',
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function files()
+    {
+        return [
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function multiSelect()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function select()
+    {
+        return [
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function status()
+    {
+        return [
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function people()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function relation()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function phoneNumber()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::STARTS_WITH,
+            Operators::ENDS_WITH,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function email()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::STARTS_WITH,
+            Operators::ENDS_WITH,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function url()
+    {
+        return [
+            Operators::CONTAINS,
+            Operators::DOES_NOT_CONTAIN,
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::STARTS_WITH,
+            Operators::ENDS_WITH,
+            Operators::IS_EMPTY,
+            Operators::IS_NOT_EMPTY,
+        ];
+    }
+
+    private static function uniqueId()
+    {
+        return [
+            Operators::EQUALS,
+            Operators::DOES_NOT_EQUAL,
+            Operators::GREATER_THAN,
+            Operators::LESS_THAN,
+            Operators::GREATER_THAN_OR_EQUAL_TO,
+            Operators::LESS_THAN_OR_EQUAL_TO,
         ];
     }
 }
