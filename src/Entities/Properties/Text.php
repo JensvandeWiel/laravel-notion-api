@@ -56,8 +56,10 @@ class Text extends Property implements Modifiable
     protected function fillFromRaw(): void
     {
         parent::fillFromRaw();
-        if (! is_array($this->rawContent)) {
-            throw HandlingException::instance('The property-type is text, however the raw data-structure does not represent this type (= array of items). Please check the raw response-data.');
+
+        // Handle null or empty rawContent
+        if ($this->rawContent === null || !is_array($this->rawContent)) {
+            return;
         }
 
         $this->fillText();

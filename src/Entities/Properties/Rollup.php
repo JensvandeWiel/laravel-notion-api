@@ -22,6 +22,11 @@ class Rollup extends Property
     {
         parent::fillFromRaw();
 
+        // Handle null rawContent
+        if ($this->rawContent === null || !is_array($this->rawContent)) {
+            return;
+        }
+
         if (Arr::exists($this->rawContent, 'type')) {
             $this->rollupType = $this->rawContent['type'];
 

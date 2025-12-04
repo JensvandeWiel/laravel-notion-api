@@ -11,7 +11,10 @@ use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
  * Class DataSources.
  *
  * Data sources endpoint for Notion API 2025-09-03+.
- * This endpoint allows querying and managing data sources (databases) within Notion.
+ * This endpoint allows listing and retrieving data sources within Notion.
+ *
+ * For querying pages from a data source, use the DataSource endpoint instead:
+ * @see DataSource
  *
  * @reference https://developers.notion.com/reference/data-sources
  */
@@ -57,59 +60,6 @@ class DataSources extends Endpoint implements EndpointInterface
 
         return new DataSource($result);
     }
-
-    /**
-     * Query a data source to retrieve pages.
-     *
-     * @url https://api.notion.com/{version}/data_sources/{data_source_id}/query
-     *
-     * @reference https://developers.notion.com/reference/post-data-source-query
-     *
-     * @param  string  $dataSourceId
-     * @param  array  $payload
-     * @return array
-     *
-     * @throws HandlingException
-     * @throws NotionException
-     */
-    public function query(string $dataSourceId, array $payload = []): array
-    {
-        $response = $this->post(
-            $this->url(self::DATA_SOURCES."/{$dataSourceId}/query"),
-            $payload
-        );
-
-        return $response->json();
-    }
-
-    /**
-     * List data sources for a specific database.
-     *
-     * This is useful for multi-source databases to discover all available data sources.
-     *
-     * @param  string  $databaseId
-     * @return DataSourceCollection
-     *
-     * @throws HandlingException
-     * @throws NotionException
-     */
-    public function forDatabase(string $databaseId): DataSourceCollection
-    {
-        $payload = [
-            'filter' => [
-                'property' => 'database_id',
-                'text' => [
-                    'equals' => $databaseId,
-                ],
-            ],
-        ];
-
-        $resultData = $this->post(
-            $this->url(self::DATA_SOURCES.'/query'),
-            $payload
-        )->json();
-
-        return new DataSourceCollection($resultData);
-    }
 }
+
 

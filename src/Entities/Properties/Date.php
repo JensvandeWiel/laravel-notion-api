@@ -91,7 +91,13 @@ class Date extends Property implements Modifiable
     {
         $richDate = new RichDate();
 
-        if (Arr::exists($this->rawContent, 'start')) {
+        // Handle null rawContent
+        if ($this->rawContent === null || !is_array($this->rawContent)) {
+            $this->content = $richDate;
+            return;
+        }
+
+        if (Arr::exists($this->rawContent, 'start') && $this->rawContent['start'] !== null) {
             $startAsIsoString = $this->rawContent['start'];
             $richDate->setStart(new DateTime($startAsIsoString));
             $richDate->setHasTime($this->isIsoTimeString($startAsIsoString));
