@@ -1,9 +1,9 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\FilterBag;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\FilterBag;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
 
 it('creates a FilterBag with an "or" operator with the instance method', function () {
     $filterBag = FilterBag::or();

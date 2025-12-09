@@ -1,25 +1,25 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Builder\PropertyBuilder;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Checkbox;
-use FiveamCode\LaravelNotionApi\Entities\Properties\CreatedBy;
-use FiveamCode\LaravelNotionApi\Entities\Properties\CreatedTime;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Date;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Email;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Files;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Formula;
-use FiveamCode\LaravelNotionApi\Entities\Properties\LastEditedBy;
-use FiveamCode\LaravelNotionApi\Entities\Properties\LastEditedTime;
-use FiveamCode\LaravelNotionApi\Entities\Properties\MultiSelect;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Number;
-use FiveamCode\LaravelNotionApi\Entities\Properties\People;
-use FiveamCode\LaravelNotionApi\Entities\Properties\PhoneNumber;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Relation;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Rollup;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Select;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Text;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Title;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Url;
+use Jensvandewiel\LaravelNotionApi\Builder\PropertyBuilder;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Checkbox;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\CreatedBy;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\CreatedTime;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Date;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Email;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Files;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Formula;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\LastEditedBy;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\LastEditedTime;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\MultiSelect;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Number;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\People;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\PhoneNumber;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Relation;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Rollup;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Select;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Text;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Title;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Url;
 use Illuminate\Support\Facades\Http;
 
 $httpRecorder = null;
@@ -31,7 +31,7 @@ beforeEach(function () {
 
 it('should throw a handling exception if no title property is added', function () {
     $this->httpRecorder->nameForNextRequest('400-no-title-property');
-    $this->expectException(\FiveamCode\LaravelNotionApi\Exceptions\NotionException::class);
+    $this->expectException(\Jensvandewiel\LaravelNotionApi\Exceptions\NotionException::class);
     $this->expectExceptionMessage('Bad Request: (validation_error) (Title is not provided)');
     $this->expectExceptionCode(400);
 

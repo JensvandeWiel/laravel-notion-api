@@ -1,7 +1,7 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Entities\NotionParent;
-use FiveamCode\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Entities\NotionParent;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
 use Illuminate\Support\Facades\Http;
 
 $httpRecorder = null;
@@ -27,15 +27,15 @@ it('should resolve the users of specific page properties', function () {
     $lastEditedByUser = Notion::resolve()->user($lastEditedBy->getUser());
     $personUser = Notion::resolve()->user($person->getPeople()->first());
 
-    expect($createdByUser)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\User::class);
+    expect($createdByUser)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\User::class);
     expect($createdByUser->getName())->toBe('TestUser for NotionForLaravel');
     expect($createdByUser->getId())->toBe('455aad58-7aec-4a39-8c0f-37cab3ca38f5');
 
-    expect($lastEditedByUser)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\User::class);
+    expect($lastEditedByUser)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\User::class);
     expect($lastEditedByUser->getName())->toBe('TestUser for NotionForLaravel');
     expect($lastEditedByUser->getId())->toBe('455aad58-7aec-4a39-8c0f-37cab3ca38f5');
 
-    expect($personUser)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\User::class);
+    expect($personUser)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\User::class);
     expect($personUser->getName())->toBe('TestUser for NotionForLaravel');
     expect($personUser->getId())->toBe('455aad58-7aec-4a39-8c0f-37cab3ca38f5');
 });
@@ -46,7 +46,7 @@ it('should resolve the page parent of a page', function () {
 
     expect($page->getParent()->isPage())->toBeTrue();
 
-    expect($parentPage)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Page::class);
+    expect($parentPage)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Page::class);
     expect($parentPage->getId())->toBe('5ac149b9-d8f1-4d8d-ac05-facefc16ebf7');
     expect($parentPage->getTitle())->toBe('Resolve Endpoint - Testing Suite');
 });
@@ -68,7 +68,7 @@ it('should resolve the database parent of a page', function () {
     expect($page->getParent()->isDatabase())->toBeTrue();
 
     $database = Notion::resolve()->parent($page->getParent());
-    expect($database)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Database::class);
+    expect($database)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Database::class);
     expect($database->getId())->toBe('8a0ef209-8c8a-4fd1-a21c-db7ab327e870');
     expect($database->getTitle())->toBe('Test Table as Parent');
 });
@@ -79,7 +79,7 @@ it('should resolve the block parent of a block', function () {
     expect($block->getParent()->isBlock())->toBeTrue();
 
     $parentBlock = Notion::resolve()->parent($block->getParent());
-    expect($parentBlock)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Blocks\Block::class);
+    expect($parentBlock)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block::class);
     expect($parentBlock->getId())->toBe('0971ac1a-b6f2-4acc-b706-f5f2ed16ffd6');
     expect($parentBlock->getType())->toBe('paragraph');
 });
@@ -88,12 +88,12 @@ it('should resolve the page parent of a block', function () {
     $block = Notion::block('0971ac1a-b6f2-4acc-b706-f5f2ed16ffd6')->retrieve();
 
     $pageParent = Notion::resolve()->parent($block->getParent());
-    expect($pageParent)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Page::class);
+    expect($pageParent)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Page::class);
     expect($pageParent->getId())->toBe('d946d011-966d-4b14-973f-dc5580f5b024');
     expect($pageParent->getTitle())->toBe('Page for Block Parent Resolve Testing');
 
     $pageParent = Notion::resolve()->parentOf($block);
-    expect($pageParent)->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Page::class);
+    expect($pageParent)->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Page::class);
     expect($pageParent->getId())->toBe('d946d011-966d-4b14-973f-dc5580f5b024');
     expect($pageParent->getTitle())->toBe('Page for Block Parent Resolve Testing');
 });
@@ -115,7 +115,7 @@ it('should resolve the pages of a database relation', function () {
 
     expect($relationPages)->toBeInstanceOf(\Illuminate\Support\Collection::class);
     expect($relationPages->count())->toBe(3);
-    expect($relationPages->first())->toBeInstanceOf(\FiveamCode\LaravelNotionApi\Entities\Page::class);
+    expect($relationPages->first())->toBeInstanceOf(\Jensvandewiel\LaravelNotionApi\Entities\Page::class);
     expect($relationPages->first()->getId())->toBe('cfb10a19-30cc-43a9-8db0-04c43f8cf315');
     expect($relationPages->first()->getTitle())->toBe('test 1');
 });

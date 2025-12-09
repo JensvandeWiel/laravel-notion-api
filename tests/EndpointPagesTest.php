@@ -1,25 +1,25 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
 use Carbon\Carbon;
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Checkbox;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Date;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Email;
-use FiveamCode\LaravelNotionApi\Entities\Properties\MultiSelect;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Number;
-use FiveamCode\LaravelNotionApi\Entities\Properties\People;
-use FiveamCode\LaravelNotionApi\Entities\Properties\PhoneNumber;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Relation;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Select;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Text;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Url;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichDate;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\SelectItem;
-use FiveamCode\LaravelNotionApi\Entities\User;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Checkbox;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Date;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Email;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\MultiSelect;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Number;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\People;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\PhoneNumber;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Relation;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Select;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Text;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Url;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichDate;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\SelectItem;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Facades\Http;
 use Notion;
 

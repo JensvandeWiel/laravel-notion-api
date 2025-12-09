@@ -1,10 +1,10 @@
 <?php
 
 use Carbon\Carbon;
-use FiveamCode\LaravelNotionApi\Entities\Collections\CommentCollection;
-use FiveamCode\LaravelNotionApi\Entities\Comment;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\CommentCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Comment;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Facades\Http;
 
 it('should throw correct exception if comment access not allowed by api when listing comments', function () {

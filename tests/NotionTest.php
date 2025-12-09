@@ -1,9 +1,9 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Notion;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Notion;
 
 class NotionTest extends NotionApiTest
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\NotionFacade;
+use Jensvandewiel\LaravelNotionApi\NotionFacade;
 use Illuminate\Support\Collection;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -14,7 +14,7 @@ class NotionApiTest extends Orchestra
      */
     protected function getPackageProviders($app): array
     {
-        return ['FiveamCode\LaravelNotionApi\LaravelNotionApiServiceProvider'];
+        return ['Jensvandewiel\LaravelNotionApi\LaravelNotionApiServiceProvider'];
     }
 
     /**

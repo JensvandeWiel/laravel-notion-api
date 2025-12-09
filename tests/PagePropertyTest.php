@@ -1,15 +1,15 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Entities\Properties\MultiSelect;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Number;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Select;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Text;
-use FiveamCode\LaravelNotionApi\Entities\Properties\Title;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\RichText;
-use FiveamCode\LaravelNotionApi\Entities\PropertyItems\SelectItem;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\MultiSelect;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Number;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Select;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Text;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Title;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\RichText;
+use Jensvandewiel\LaravelNotionApi\Entities\PropertyItems\SelectItem;
 use Illuminate\Support\Facades\Http;
 use Notion;
 

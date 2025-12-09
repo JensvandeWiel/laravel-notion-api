@@ -1,15 +1,15 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Endpoints\Database;
-use FiveamCode\LaravelNotionApi\Entities\Collections\PageCollection;
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\FilterBag;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
-use FiveamCode\LaravelNotionApi\Query\Sorting;
-use FiveamCode\LaravelNotionApi\Query\StartCursor;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Database;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\PageCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\FilterBag;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Query\Sorting;
+use Jensvandewiel\LaravelNotionApi\Query\StartCursor;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 

@@ -1,25 +1,25 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Block;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\BulletedListItem;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Embed;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\File;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\HeadingOne;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\HeadingThree;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\HeadingTwo;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Image;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\NumberedListItem;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Paragraph;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Pdf;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Quote;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\ToDo;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Toggle;
-use FiveamCode\LaravelNotionApi\Entities\Blocks\Video;
-use FiveamCode\LaravelNotionApi\Entities\Collections\BlockCollection;
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Block;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\BulletedListItem;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Embed;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\File;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\HeadingOne;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\HeadingThree;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\HeadingTwo;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Image;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\NumberedListItem;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Paragraph;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Pdf;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Quote;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\ToDo;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Toggle;
+use Jensvandewiel\LaravelNotionApi\Entities\Blocks\Video;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\BlockCollection;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Facades\Http;
 use Notion;
 

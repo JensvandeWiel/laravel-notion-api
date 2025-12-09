@@ -1,6 +1,6 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Query\Sorting;
+use Jensvandewiel\LaravelNotionApi\Query\Sorting;
 use Illuminate\Support\Collection;
 
 it('can sort by a single property', function () {

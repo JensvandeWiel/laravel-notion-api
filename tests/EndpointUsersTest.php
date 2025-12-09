@@ -1,10 +1,10 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\UserCollection;
-use FiveamCode\LaravelNotionApi\Entities\User;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\UserCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\User;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Facades\Http;
 use Notion;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace FiveamCode\LaravelNotionApi\Tests;
+namespace Jensvandewiel\LaravelNotionApi\Tests;
 
-use FiveamCode\LaravelNotionApi\Entities\Collections\EntityCollection;
-use FiveamCode\LaravelNotionApi\Entities\Database;
-use FiveamCode\LaravelNotionApi\Entities\Page;
-use FiveamCode\LaravelNotionApi\Exceptions\NotionException;
+use Jensvandewiel\LaravelNotionApi\Entities\Collections\EntityCollection;
+use Jensvandewiel\LaravelNotionApi\Entities\Database;
+use Jensvandewiel\LaravelNotionApi\Entities\Page;
+use Jensvandewiel\LaravelNotionApi\Exceptions\NotionException;
 use Illuminate\Support\Facades\Http;
 use Notion;
 

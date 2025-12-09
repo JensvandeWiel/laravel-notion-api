@@ -1,8 +1,8 @@
 <?php
 
-use FiveamCode\LaravelNotionApi\Exceptions\HandlingException;
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
 use Illuminate\Support\Collection;
 
 it('creates a text filter with the given data', function () {

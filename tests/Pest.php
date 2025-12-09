@@ -1,7 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
-use FiveamCode\LaravelNotionApi\Tests\NotionApiTest;
+use Jensvandewiel\LaravelNotionApi\Tests\NotionApiTest;
 use Illuminate\Support\Facades\Config;
 
 uses(NotionApiTest::class)->beforeEach(function () {

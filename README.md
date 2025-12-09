@@ -60,7 +60,7 @@ For detailed usage information and a list of available endpoints see (the docs).
 
 ### Fetch a Notion Database
 
-The `databases()->find()` method returns a `FiveamCode\LaravelNotionApi\Entities\Database` object,
+The `databases()->find()` method returns a `Jensvandewiel\LaravelNotionApi\Entities\Database` object,
 which contains all the information about the database, including its properties and the possible values for each
 property.
 
@@ -73,7 +73,7 @@ Notion::databases()
 
 ### Fetch a Notion Page
 
-The `pages()->find()` method returns a `FiveamCode\LaravelNotionApi\Entities\Page` object,
+The `pages()->find()` method returns a `Jensvandewiel\LaravelNotionApi\Entities\Page` object,
 which contains all the information about the page, including its properties and the possible values for each property.
 
 ```php
@@ -102,8 +102,8 @@ available
 filters and sorts, please refer to the [documentation](https://developers.notion.com/reference/post-database-query).
 
 ```php
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
 
 $nameFilter = Filter::textFilter('Name', Operators::EQUALS, 'Ada Lovelace');
 
@@ -118,10 +118,10 @@ Compound filters for AND or OR queries are also available:
 
 ```php
 use Illuminate\Support\Collection;
-use FiveamCode\LaravelNotionApi\Query\Filters\Filter;
-use FiveamCode\LaravelNotionApi\Query\Filters\FilterBag;
-use FiveamCode\LaravelNotionApi\Query\Filters\Operators;
-use FiveamCode\LaravelNotionApi\Query\Sorting;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\FilterBag;
+use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
+use Jensvandewiel\LaravelNotionApi\Query\Sorting;
 
 # Give me all entries that are
 # (KnownFor == UNIVAC || KnownFor == ENIAC)
