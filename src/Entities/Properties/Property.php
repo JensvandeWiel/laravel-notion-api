@@ -2,6 +2,7 @@
 
 namespace Jensvandewiel\LaravelNotionApi\Entities\Properties;
 
+use Illuminate\Support\Facades\Log;
 use Jensvandewiel\LaravelNotionApi\Entities\Entity;
 use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Support\Arr;
@@ -154,7 +155,7 @@ class Property extends Entity
     /**
      * @return mixed
      */
-    public function getContent()
+    public function getContent(): mixed
     {
         return $this->rawContent;
     }

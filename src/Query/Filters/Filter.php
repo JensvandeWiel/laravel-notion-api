@@ -56,7 +56,7 @@ class Filter extends QueryHelper
      * @param  string  $value
      * @return Filter
      */
-    public static function textFilter(string $property, string $comparisonOperator, string $value): Filter
+    public static function textFilter(string $property, string $comparisonOperator, string|bool $value): Filter
     {
         // For Notion API 2025-09-03, text properties use 'rich_text' filter type
         self::isValidComparisonOperatorFor('rich_text', $comparisonOperator);

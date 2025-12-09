@@ -36,17 +36,17 @@ class Checkbox extends Property implements Modifiable
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function getContent(): bool
+    public function getContent(): ?bool
     {
         return $this->content;
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isChecked(): bool
+    public function isChecked(): ?bool
     {
         return $this->content;
     }
@@ -56,6 +56,6 @@ class Checkbox extends Property implements Modifiable
      */
     public function asText(): string
     {
-        return ($this->getContent()) ? 'true' : 'false';
+        return ($this->getContent() === true) ? 'true' : 'false';
     }
 }

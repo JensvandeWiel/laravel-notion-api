@@ -37,17 +37,17 @@ class PhoneNumber extends Property implements Modifiable
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->content;
     }

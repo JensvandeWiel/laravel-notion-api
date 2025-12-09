@@ -39,17 +39,17 @@ class Number extends Property implements Modifiable
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getContent(): float
+    public function getContent(): ?float
     {
         return $this->content;
     }
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getNumber(): float
+    public function getNumber(): ?float
     {
         return $this->content;
     }
