@@ -100,6 +100,10 @@ class RichDate extends Entity
 
     public function __toString(): string
     {
+        if ($this->isEmpty()) {
+            return '';
+        }
+
         // Return a string representation of the date, check if it has time or not and if its a range or not, return in iSO 8601 format
         if ($this->isRange()) {
             CarbonPeriod::createFromArray([
