@@ -13,7 +13,7 @@ use Illuminate\Support\Arr;
  */
 class RichDate extends Entity
 {
-    protected DateTime $start;
+    protected ?DateTime $start = null;
     protected ?DateTime $end = null;
     protected bool $hasTime = false;
 
@@ -24,6 +24,11 @@ class RichDate extends Entity
     {
         $this->responseData = $responseData;
         $this->fillFromRaw();
+    }
+
+    function isEmpty(): bool
+    {
+        return $this->start === null && $this->end === null;
     }
 
     protected function fillFromRaw(): void
