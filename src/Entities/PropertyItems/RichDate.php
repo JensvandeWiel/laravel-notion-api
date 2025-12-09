@@ -2,7 +2,9 @@
 
 namespace Jensvandewiel\LaravelNotionApi\Entities\PropertyItems;
 
+use Carbon\CarbonPeriod;
 use DateTime;
+use Illuminate\Support\Carbon;
 use Jensvandewiel\LaravelNotionApi\Entities\Entity;
 use Illuminate\Support\Arr;
 
@@ -89,5 +91,18 @@ class RichDate extends Entity
     public function setHasTime($hasTime): void
     {
         $this->hasTime = $hasTime;
+    }
+
+    public function __toString(): string
+    {
+        // Return a string representation of the date, check if it has time or not and if its a range or not, return in iSO 8601 format
+        if ($this->isRange()) {
+            CarbonPeriod::createFromArray([
+                $this->getStart(),
+                $this->getEnd(),
+            ])->toIso8601String();
+        }
+
+        return Carbon::instance($this->getStart())->toIso8601String();
     }
 }

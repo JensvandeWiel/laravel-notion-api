@@ -52,4 +52,9 @@ class RichText extends Entity
     {
         $this->plainText = $text;
     }
+
+    public function __toString(): string
+    {
+        return $this->getPlainText();
+    }
 }
