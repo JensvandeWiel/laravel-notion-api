@@ -49,7 +49,7 @@ class Rollup extends Property
     /**
      * @return mixed
      */
-    public function getContent()
+    public function getContent(): mixed
     {
         return $this->content;
     }
