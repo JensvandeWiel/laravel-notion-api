@@ -6,7 +6,7 @@ This package provides an elegant and comprehensive interface for interacting wit
 
 ## Installation
 
-The package is compatible with Laravel 8, 9, 10, and 11. The minimum PHP requirement is 8.0.
+The package is compatible with Laravel 12+. Support is only provided for Laravel 12 and above. The minimum PHP requirement is 8.0.
 
 1. Install the package via Composer:
 
