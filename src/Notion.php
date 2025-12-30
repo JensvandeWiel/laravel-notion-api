@@ -8,9 +8,11 @@ use Jensvandewiel\LaravelNotionApi\Endpoints\Database;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Databases;
 use Jensvandewiel\LaravelNotionApi\Endpoints\DataSources;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Endpoint;
+use Jensvandewiel\LaravelNotionApi\Endpoints\FileUploads;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Pages;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Resolve;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Search;
+use Jensvandewiel\LaravelNotionApi\Endpoints\Tokens;
 use Jensvandewiel\LaravelNotionApi\Endpoints\Users;
 use Jensvandewiel\LaravelNotionApi\Exceptions\HandlingException;
 use Illuminate\Http\Client\PendingRequest;
@@ -218,6 +220,26 @@ class Notion
     public function comments(): Comments
     {
         return new Comments($this);
+    }
+
+    /**
+     * @return FileUploads
+     *
+     * @throws HandlingException
+     */
+    public function fileUploads(): FileUploads
+    {
+        return new FileUploads($this);
+    }
+
+    /**
+     * @return Tokens
+     *
+     * @throws HandlingException
+     */
+    public function tokens(): Tokens
+    {
+        return new Tokens($this);
     }
 
     public function resolve(): Resolve

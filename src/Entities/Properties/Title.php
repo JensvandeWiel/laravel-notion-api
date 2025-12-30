@@ -37,12 +37,21 @@ class Title extends Property implements Modifiable
         //!INFO: Currently only plain_text is transfered into rawContent
         //TODO: Later the RichText has to return it's raw structure into 'content'
         $titleProperty->rawContent = [
-            'title' => [
-                [
-                    'text' => [
-                        'content' => $richText->getPlainText(),
-                    ],
+            [
+                'type' => 'text',
+                'text' => [
+                    'content' => $richText->getPlainText(),
                 ],
+                'annotations' => [
+                    'bold' => false,
+                    'italic' => false,
+                    'strikethrough' => false,
+                    'underline' => false,
+                    'code' => false,
+                    'color' => 'default',
+                ],
+                'plain_text' => $richText->getPlainText(),
+                'href' => null,
             ],
         ];
 

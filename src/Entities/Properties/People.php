@@ -20,10 +20,10 @@ class People extends Property implements Modifiable
     {
         $peopleProperty = new People();
         $peopleProperty->content = new Collection();
-        $peopleProperty->rawContent = ['people' => []];
+        $peopleProperty->rawContent = [];
 
         foreach ($userIds as $userId) {
-            array_push($peopleProperty->rawContent['people'], ['object' => 'user', 'id' => $userId]);
+            array_push($peopleProperty->rawContent, ['object' => 'user', 'id' => $userId]);
             $peopleProperty->content->add(new User(['object' => 'user', 'id' => $userId]));
         }
 

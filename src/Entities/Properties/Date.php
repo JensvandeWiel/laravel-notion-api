@@ -29,16 +29,12 @@ class Date extends Property implements Modifiable
 
         if ($richDate->isRange()) {
             $dateProperty->rawContent = [
-                'date' => [
-                    'start' => $start->format('Y-m-d'),
-                    'end' => $end->format('Y-m-d'),
-                ],
+                'start' => $start->format('Y-m-d'),
+                'end' => $end->format('Y-m-d'),
             ];
         } else {
             $dateProperty->rawContent = [
-                'date' => [
-                    'start' => $start->format('Y-m-d'),
-                ],
+                'start' => $start->format('Y-m-d'),
             ];
         }
 
@@ -62,16 +58,12 @@ class Date extends Property implements Modifiable
 
         if ($richDate->isRange()) {
             $dateProperty->rawContent = [
-                'date' => [
-                    'start' => $start->format('c'),
-                    'end' => $end->format('c'),
-                ],
+                'start' => $start->format('c'),
+                'end' => $end->format('c'),
             ];
         } else {
             $dateProperty->rawContent = [
-                'date' => [
-                    'start' => $start->format('c'),
-                ],
+                'start' => $start->format('c'),
             ];
         }
 

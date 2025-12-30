@@ -30,9 +30,7 @@ class Select extends Property implements Modifiable
         $selectProperty->content = $selectItem;
 
         $selectProperty->rawContent = [
-            'select' => [
-                'name' => $selectItem->getName(),
-            ],
+            'name' => $selectItem->getName(),
         ];
 
         return $selectProperty;

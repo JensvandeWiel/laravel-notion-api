@@ -19,9 +19,7 @@ class Checkbox extends Property implements Modifiable
         $checkboxProperty = new Checkbox();
         $checkboxProperty->content = $checked;
 
-        $checkboxProperty->rawContent = [
-            'checkbox' => $checkboxProperty->isChecked(),
-        ];
+        $checkboxProperty->rawContent = $checkboxProperty->isChecked();
 
         return $checkboxProperty;
     }

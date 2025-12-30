@@ -106,4 +106,55 @@ class Pages extends Endpoint implements EndpointInterface
 
         return new Page($response);
     }
+
+    /**
+     * Archive a page.
+     *
+     * @url https://api.notion.com/{version}/pages/{page_id} (patch)
+     *
+     * @reference https://developers.notion.com/reference/archive-a-page
+     *
+     * @param  string  $pageId
+     * @return Page
+     *
+     * @throws HandlingException
+     * @throws NotionException
+     */
+    public function archive(string $pageId): Page
+    {
+        $response = $this
+            ->patch(
+                $this->url(Endpoint::PAGES.'/'.$pageId),
+                ['archived' => true]
+            )
+            ->json();
+
+        return new Page($response);
+    }
+
+    /**
+     * Move a page.
+     *
+     * @url https://api.notion.com/{version}/pages/{page_id}/move (post)
+     *
+     * @reference https://developers.notion.com/reference/move-page
+     *
+     * @param  string  $pageId
+     * @param  array  $payload
+     * @return Page
+     *
+     * @throws HandlingException
+     * @throws NotionException
+     */
+    public function move(string $pageId, array $payload): Page
+    {
+        $response = $this
+            ->post(
+                $this->url(Endpoint::PAGES.'/'.$pageId.'/move'),
+                $payload
+            )
+            ->json();
+
+        return new Page($response);
+    }
 }

@@ -18,10 +18,10 @@ class Relation extends Property implements Modifiable
     {
         $relationProperty = new Relation();
         $relationProperty->content = new Collection();
-        $relationProperty->rawContent = ['relation' => []];
+        $relationProperty->rawContent = [];
 
         foreach ($relationIds as $relationId) {
-            array_push($relationProperty->rawContent['relation'], ['id' => $relationId]);
+            array_push($relationProperty->rawContent, ['id' => $relationId]);
             $relationProperty->content->add($relationId);
         }
 

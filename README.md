@@ -1,193 +1,313 @@
-<h1 align="center"> Notion for Laravel</h1>
+# Laravel Notion API Package
 
-<h2 align="center">:warning: Incomplete api, please contribute <3 :warning:</h2>
+This package provides an elegant and comprehensive interface for interacting with the Notion API within Laravel applications. It allows you to query, create, update, and manage Notion pages, databases, blocks, comments, users, and more, with a fluent and intuitive API.
 
-<div align="center">
-<img src="https://notionforlaravel.com/images/open-graph.png" alt="Notion For Laravel" width="500">
-
-[![Run tests](https://github.com/5am-code/laravel-notion-api/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/5am-code/laravel-notion-api/actions/workflows/main.yml)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/fiveam-code/laravel-notion-api.svg?style=flat-square)](https://packagist.org/packages/fiveam-code/laravel-notion-api)
-[![Total Downloads](https://img.shields.io/packagist/dt/fiveam-code/laravel-notion-api.svg?style=flat-square)](https://packagist.org/packages/fiveam-code/laravel-notion-api)
-
-[comment]: <> (![GitHub Actions]&#40;https://github.com/fiveam-code/laravel-notion-api/actions/workflows/main.yml/badge.svg&#41;)
-</div>
-This package provides a simple and crisp way to access the Notion API endpoints, query data and update existing entries.
-
-# Documentation
-
-For a extensive documentation, more context and usage examples, head over to the official documentation at [notionforlaravel.com](https://notionforlaravel.com).
-
-
-# Quick Start Guide
-
-All examples refer to our test database, which you can
-find [here](https://dianawebdev.notion.site/8284f3ff77e24d4a939d19459e4d6bdc?v=bc3a9ce8cdb84d3faefc9ae490136ac2).
+> **Note**: This package is a fork maintained for stability and bug fixes on-demand. Updates and improvements are applied as needed, and tests are currently not fully correct. For the latest features, consider the original package.
 
 ## Installation
 
-The package is compatible with Laravel 8, 9 and 10. The minimum PHP requirement is 8.0.
+The package is compatible with Laravel 8, 9, 10, and 11. The minimum PHP requirement is 8.0.
 
-1. Install the package via composer:
-
-   ```bash
-   composer require fiveam-code/laravel-notion-api
-   ```
-
-2. Get your Notion API access token like explained in [their documentation](https://developers.notion.com/). It's also
-   important to grant access to the integration within your Notion pages, which is described in the developer
-   documentation at Notion as well.
-
-3. Add a new line to your applications `.env` file:
+1. Install the package via Composer:
 
    ```bash
-   NOTION_API_TOKEN="$YOUR_ACCESS_TOKEN"
+   composer require jensvandewiel/laravel-notion-api
    ```
 
-4. You're ready to go! You can now access Notion endpoints through the `Notion` facade:
+2. Obtain your Notion API access token by following the instructions in the Notion developer documentation at https://developers.notion.com/reference/authentication.
 
-   ```php
-   use \Notion;
+3. Add the token to your application's .env file:
 
-   Notion::databases()->find("8284f3ff77e24d4a939d19459e4d6bdc");
+   ```bash
+   NOTION_API_TOKEN=your_access_token_here
    ```
 
-   That's it.
+4. Publish the configuration file (optional, for customization):
 
-For detailed usage information and a list of available endpoints see (the docs).
+   ```bash
+   php artisan vendor:publish --provider="Jensvandewiel\LaravelNotionApi\LaravelNotionApiServiceProvider"
+   ```
 
-## Examples
+## Configuration
 
+The package uses the NOTION_API_TOKEN environment variable for authentication. You can customize the API version and other settings in the published config file.
 
-### Fetch a Notion Database
+## Basic Usage
 
-The `databases()->find()` method returns a `Jensvandewiel\LaravelNotionApi\Entities\Database` object,
-which contains all the information about the database, including its properties and the possible values for each
-property.
-
-```php
-use \Notion;
-
-Notion::databases()
-        ->find("8284f3ff77e24d4a939d19459e4d6bdc");
-```
-
-### Fetch a Notion Page
-
-The `pages()->find()` method returns a `Jensvandewiel\LaravelNotionApi\Entities\Page` object,
-which contains all the information about the page, including its properties and the possible values for each property.
+Access Notion endpoints through the Notion facade:
 
 ```php
-Notion::pages()
-        ->find("e7e5e47d-23ca-463b-9750-eb07ca7115e4");
+use Jensvandewiel\LaravelNotionApi\Notion;
+
+$notion = new Notion(env('NOTION_API_TOKEN'));
 ```
 
-### Search
-
-The `search()` endpoint returns a collection of pages that match the search query. The scope of the search is limited to
-the workspace that the integration is installed in
-and the pages that are shared with the integration.
+Or use the facade:
 
 ```php
-Notion::search("Search term")
-        ->query()
-        ->asCollection();
+use Notion;
+
+Notion::pages()->find('page_id');
 ```
 
-### Query Database
+## Entities
 
-The `database()` endpoint allows you to query a specific database and returns a collection of pages (= database
-entries).
-You can filter and sort the results and limit the number of returned entries. For detailed information about the
-available
-filters and sorts, please refer to the [documentation](https://developers.notion.com/reference/post-database-query).
+The package provides several entity classes that represent Notion objects:
+
+- Page: Represents a Notion page
+- Database: Represents a Notion database
+- DataSource: Represents a Notion data source
+- Block: Represents a Notion block
+- User: Represents a Notion user
+- Comment: Represents a Notion comment
+- FileUpload: Represents a file upload
+- Token: Represents an OAuth token
+- NotionParent: Represents parent relationships
+
+Each entity provides methods to access and manipulate its properties.
+
+## Pages
+
+### Retrieving a Page
+
+To retrieve a page by its ID:
 
 ```php
-use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
-use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
-
-$nameFilter = Filter::textFilter('Name', Operators::EQUALS, 'Ada Lovelace');
-
-\Notion::database("8284f3ff77e24d4a939d19459e4d6bdc")
-    ->filterBy($nameFilter)
-    ->limit(5)
-    ->query()
-    ->asCollection();
+$page = Notion::pages()->find('page_id');
 ```
 
-Compound filters for AND or OR queries are also available:
+This returns a Page entity with all its properties and content.
+
+### Creating a Page in a Database
+
+To create a new page in a database:
 
 ```php
-use Illuminate\Support\Collection;
-use Jensvandewiel\LaravelNotionApi\Query\Filters\Filter;
-use Jensvandewiel\LaravelNotionApi\Query\Filters\FilterBag;
-use Jensvandewiel\LaravelNotionApi\Query\Filters\Operators;
-use Jensvandewiel\LaravelNotionApi\Query\Sorting;
+$page = new Page();
+$page->setTitle('Name', 'My New Page');
+$page->setText('Description', 'This is a description');
 
-# Give me all entries that are
-# (KnownFor == UNIVAC || KnownFor == ENIAC)
-# and sort them by name ascending
-
-$filterBag = new FilterBag(Operators::AND);
-
-$filterBag->addFilter(
-    Filter::rawFilter("Known for", [
-        "multi_select" => [Operators::CONTAINS => "UNIVAC"],
-    ])
-);
-
-$filterBag->addFilter(
-    Filter::rawFilter("Known for", [
-        "multi_select" => [Operators::CONTAINS => "ENIAC"],
-    ])
-);
-
-\Notion::database("8284f3ff77e24d4a939d19459e4d6bdc")
-    ->filterBy($filterBag)
-    ->sortBy(Sorting::propertySort('Name', 'ascending'))
-    ->limit(5)
-    ->query()
-    ->asCollection();
+$createdPage = Notion::pages()->createInDatabase('database_id', $page);
 ```
 
-### Tests
+### Creating a Page as a Child of Another Page
 
-You can find even more usage examples by checking out the package tests in the `/tests` directory.
-We are using [Pest](https://pestphp.com/) for out tests and are currently in the process of switching all existing PHPUnit tests to Pest.
+```php
+$page = new Page();
+$page->setTitle('Name', 'My New Page');
 
-If you want to run the tests in your CLI:
-
-```bash
-vendor/bin/pest tests
+$createdPage = Notion::pages()->createInPage('parent_page_id', $page);
 ```
 
-# Support
+### Updating a Page
 
-## Supported by Tinkerwell
+To update an existing page:
 
-<a href="https://tinkerwell.app/">
-<img src="https://tinkerwell.app/images/tinkerwell_logo.png" width="64" height="64" alt="Tinkerwell"> <br/>
-</a>
+```php
+$page = Notion::pages()->find('page_id');
+$page->setTitle('Name', 'Updated Title');
+$page->setText('Description', 'Updated description');
 
-The development of this package is supported by [Tinkerwell](https://tinkerwell.app/).
+$updatedPage = Notion::pages()->update($page);
+```
 
+### Archiving a Page
 
-# Contributing
+```php
+Notion::pages()->archive('page_id');
+```
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+### Moving a Page
 
-# Security
+```php
+Notion::pages()->move('page_id', ['parent' => ['page_id' => 'new_parent_id']]);
+```
 
-If you discover any security related issues, please email hello@dianaweb.dev instead of using the issue tracker.
+## Databases
 
-# Credits
+### Retrieving a Database
 
-- [Diana Scharf](https://github.com/mechelon)
-- [Johannes Güntner](https://github.com/johguentner)
+```php
+$database = Notion::databases()->find('database_id');
+```
 
-<p align="center">
-<img src="https://5amco.de/images/5am.png" width="200" height="200">
-</p>
+### Creating a Database
 
-# License
+```php
+$database = new Database();
+// Set properties...
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+$createdDatabase = Notion::databases()->create($database);
+```
+
+### Updating a Database
+
+```php
+$database = Notion::databases()->find('database_id');
+// Modify properties...
+
+$updatedDatabase = Notion::databases()->update($database);
+```
+
+### Querying a Database
+
+```php
+$query = Notion::databases()->query('database_id');
+$pages = $query->filter(['property' => 'Name', 'text' => ['contains' => 'search term']])->get();
+```
+
+## Blocks
+
+### Retrieving Block Children
+
+```php
+$blocks = Notion::blocks()->getChildren('block_id');
+```
+
+### Appending Block Children
+
+```php
+$blocks = [
+    ['type' => 'paragraph', 'paragraph' => ['rich_text' => [['type' => 'text', 'text' => ['content' => 'New paragraph']]]]]
+];
+
+Notion::blocks()->appendChildren('block_id', $blocks);
+```
+
+### Updating a Block
+
+```php
+Notion::blocks()->update('block_id', ['type' => 'paragraph', 'paragraph' => ['rich_text' => [['type' => 'text', 'text' => ['content' => 'Updated content']]]]);
+```
+
+### Deleting a Block
+
+```php
+Notion::blocks()->delete('block_id');
+```
+
+## Comments
+
+### Creating a Comment
+
+```php
+Notion::comments()->create('page_id', 'Comment text');
+```
+
+### Retrieving Comments
+
+```php
+$comments = Notion::comments()->list('page_id');
+```
+
+## Users
+
+### Retrieving Users
+
+```php
+$users = Notion::users()->list();
+```
+
+### Retrieving a Specific User
+
+```php
+$user = Notion::users()->find('user_id');
+```
+
+## Search
+
+### Searching
+
+```php
+$results = Notion::search('query')->query()->asCollection();
+```
+
+## File Uploads
+
+### Creating a File Upload
+
+```php
+$upload = Notion::fileUploads()->create('file_name', 'file_type');
+```
+
+### Sending a File Upload
+
+```php
+Notion::fileUploads()->send($upload->getId(), $fileContent);
+```
+
+### Completing a File Upload
+
+```php
+Notion::fileUploads()->complete($upload->getId());
+```
+
+## Property Types
+
+The package supports all Notion property types:
+
+- Title: setTitle('property_name', 'text')
+- Rich Text: setText('property_name', 'text')
+- Number: setNumber('property_name', 123.45)
+- Select: setSelect('property_name', 'option_name')
+- Multi-Select: setMultiSelect('property_name', ['option1', 'option2'])
+- Date: setDate('property_name', $startDate, $endDate)
+- People: setPeople('property_name', ['user_id1', 'user_id2'])
+- Files: (handled via file uploads)
+- Checkbox: setCheckbox('property_name', true)
+- URL: setUrl('property_name', 'https://example.com')
+- Email: setEmail('property_name', 'email@example.com')
+- Phone Number: setPhoneNumber('property_name', '123-456-7890')
+- Relation: setRelation('property_name', ['page_id1', 'page_id2'])
+- Place: setPlace('property_name', 'Location Name', 12.34, 56.78, 'Address')
+
+## Filtering and Sorting
+
+When querying databases, you can apply filters and sorting:
+
+```php
+$query = Notion::databases()->query('database_id');
+$query->filter([
+    'property' => 'Name',
+    'text' => ['contains' => 'search']
+]);
+$query->sort([
+    'property' => 'Created',
+    'direction' => 'descending'
+]);
+$results = $query->get();
+```
+
+## Error Handling
+
+The package throws NotionException for API errors. Always wrap your calls in try-catch blocks:
+
+```php
+try {
+    $page = Notion::pages()->find('page_id');
+} catch (NotionException $e) {
+    // Handle error
+}
+```
+
+## Advanced Usage
+
+### Working with Rich Text
+
+Rich text is handled automatically for title and text properties. For more complex rich text manipulation, use the RichText entity.
+
+### Custom Property Types
+
+For unsupported property types, you can extend the Property class and implement the Modifiable interface.
+
+### Batch Operations
+
+For bulk operations, collect multiple requests and execute them in sequence.
+
+## Contributing
+
+Contributions are welcome. Please ensure all tests pass and follow the existing code style.
+
+## License
+
+This package is open-sourced software licensed under the MIT license.

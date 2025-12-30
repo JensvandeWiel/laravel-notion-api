@@ -10,6 +10,7 @@ use Jensvandewiel\LaravelNotionApi\Entities\Properties\MultiSelect;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\Number;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\People;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\PhoneNumber;
+use Jensvandewiel\LaravelNotionApi\Entities\Properties\Place;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\Property;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\Relation;
 use Jensvandewiel\LaravelNotionApi\Entities\Properties\Select;
@@ -193,6 +194,21 @@ class Page extends Entity
     public function set(string $propertyKey, Property $property): Page
     {
         $property->setTitle($propertyKey);
+        if (isset($this->propertyMap[$propertyKey])) {
+            $oldProperty = $this->propertyMap[$propertyKey];
+            $property->responseData = $oldProperty->responseData;
+            $property->setId($oldProperty->getId());
+            $property->setType($property->responseData['type']);
+            $property->responseData[$property->getType()] = $property->getRawContent();
+        } else {
+            // for new properties, set responseData without id
+            $raw = $property->getRawContent();
+            $property->responseData = [
+                'type' => $raw['type'],
+                $raw['type'] => $raw[$raw['type']],
+            ];
+            $property->setType($raw['type']);
+        }
         $this->properties->add($property);
         $this->propertyMap[$propertyKey] = $property;
 
@@ -357,6 +373,21 @@ class Page extends Entity
     public function setPeople(string $propertyTitle, array $userIds): Page
     {
         $this->set($propertyTitle, People::value($userIds));
+
+        return $this;
+    }
+
+    /**
+     * @param  $propertyTitle
+     * @param  $name
+     * @param  $lat
+     * @param  $lon
+     * @param  $address
+     * @return Page
+     */
+    public function setPlace(string $propertyTitle, string $name, float $lat, float $lon, string $address = null): Page
+    {
+        $this->set($propertyTitle, Place::value($name, $lat, $lon, $address));
 
         return $this;
     }

@@ -20,6 +20,8 @@ class Endpoint
     public const USERS = 'users';
     public const SEARCH = 'search';
     public const COMMENTS = 'comments';
+    public const FILE_UPLOADS = 'file_uploads';
+    public const TOKENS = 'oauth';
 
     /**
      * @var Notion

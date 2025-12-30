@@ -90,4 +90,26 @@ class Databases extends Endpoint implements EndpointInterface
 
         return new Database($result->json());
     }
+
+    /**
+     * Update a database
+     *
+     * @url https://api.notion.com/{version}/databases/{database_id} (patch)
+     *
+     * @reference https://developers.notion.com/reference/update-a-database.
+     *
+     * @param  string  $databaseId
+     * @param  array  $payload
+     * @return Database
+     *
+     * @throws HandlingException
+     * @throws NotionException
+     */
+    public function update(string $databaseId, array $payload): Database
+    {
+        $result = $this
+            ->patch($this->url(Endpoint::DATABASES."/{$databaseId}"), $payload);
+
+        return new Database($result->json());
+    }
 }

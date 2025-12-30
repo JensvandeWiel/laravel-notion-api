@@ -20,9 +20,7 @@ class Number extends Property implements Modifiable
         $numberProperty->number = $number;
         $numberProperty->content = $number;
 
-        $numberProperty->rawContent = [
-            'number' => $number,
-        ];
+        $numberProperty->rawContent = $number;
 
         return $numberProperty;
     }

@@ -129,6 +129,14 @@ class Property extends Entity
     }
 
     /**
+     * @param string $type
+     */
+    public function setType(string $type): void
+    {
+        $this->type = $type;
+    }
+
+    /**
      * @return string
      */
     public function asText(): string
@@ -204,6 +212,7 @@ class Property extends Entity
             case 'formula':
             case 'rollup':
             case 'relation':
+            case 'place':
                 $class = str_replace('_', '', ucwords($type, '_'));
 
                 return 'Jensvandewiel\\LaravelNotionApi\\Entities\\Properties\\'.$class;

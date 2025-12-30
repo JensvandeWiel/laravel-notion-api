@@ -18,9 +18,7 @@ class Url extends Property implements Modifiable
         $urlProperty = new Url();
         $urlProperty->content = $url;
 
-        $urlProperty->rawContent = [
-            'url' => $url,
-        ];
+        $urlProperty->rawContent = $url;
 
         return $urlProperty;
     }

@@ -38,9 +38,7 @@ class MultiSelect extends Property implements Modifiable
         }
 
         $multiSelectProperty->content = $selectItemCollection;
-        $multiSelectProperty->rawContent = [
-            'multi_select' => $multiSelectRawContent,
-        ];
+        $multiSelectProperty->rawContent = $multiSelectRawContent;
 
         return $multiSelectProperty;
     }

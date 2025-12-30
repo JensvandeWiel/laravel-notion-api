@@ -18,9 +18,7 @@ class Email extends Property implements Modifiable
         $emailProperty = new Email();
         $emailProperty->content = $email;
 
-        $emailProperty->rawContent = [
-            'email' => $email,
-        ];
+        $emailProperty->rawContent = $email;
 
         return $emailProperty;
     }
