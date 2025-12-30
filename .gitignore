@@ -5,3 +5,4 @@ coverage/
 .phpunit.cache/
 .env*
 coverage-report
+/notion_api_docs/
