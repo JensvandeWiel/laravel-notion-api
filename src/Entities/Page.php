@@ -202,12 +202,31 @@ class Page extends Entity
             $property->responseData[$property->getType()] = $property->getRawContent();
         } else {
             // for new properties, set responseData without id
-            $raw = $property->getRawContent();
-            $property->responseData = [
-                'type' => $raw['type'],
-                $raw['type'] => $raw[$raw['type']],
+            // Determine the type from the property class
+            $typeMap = [
+                Title::class => 'title',
+                Text::class => 'rich_text',
+                Number::class => 'number',
+                Select::class => 'select',
+                MultiSelect::class => 'multi_select',
+                Date::class => 'date',
+                Checkbox::class => 'checkbox',
+                Email::class => 'email',
+                PhoneNumber::class => 'phone_number',
+                Url::class => 'url',
+                People::class => 'people',
+                Relation::class => 'relation',
+                Place::class => 'place',
             ];
-            $property->setType($raw['type']);
+
+            $propertyClass = get_class($property);
+            $type = $typeMap[$propertyClass] ?? 'rich_text';
+
+            $property->setType($type);
+            $property->responseData = [
+                'type' => $type,
+                $type => $property->getRawContent(),
+            ];
         }
         $this->properties->add($property);
         $this->propertyMap[$propertyKey] = $property;
@@ -215,6 +234,7 @@ class Page extends Entity
         if ($property instanceof Title) {
             $this->title = $property->getPlainText();
         }
+
 
         return $this;
     }
