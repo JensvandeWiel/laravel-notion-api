@@ -132,17 +132,64 @@ class RichText extends Entity
                 'content' => $text,
                 'link' => null,
             ],
-            'annotations' => [
-                'bold' => false,
-                'italic' => false,
-                'strikethrough' => false,
-                'underline' => false,
-                'code' => false,
-                'color' => 'default',
-            ],
+            'annotations' => $this->normalizeAnnotations([]),
             'plain_text' => $text,
             'href' => null,
         ]));
+    }
+
+    /**
+     * Create a RichText instance from a plain string.
+     */
+    public static function fromPlainText(string $text): self
+    {
+        $richText = new self();
+        $richText->setPlainText($text);
+
+        return $richText;
+    }
+
+    /**
+     * Create a RichText instance from raw rich text items.
+     */
+    public static function fromItems(array $items): self
+    {
+        return new self($items);
+    }
+
+    /**
+     * Append a text item with optional annotations and link.
+     */
+    public function addText(string $content, array $annotations = [], ?string $link = null): self
+    {
+        $item = [
+            'type' => 'text',
+            'text' => [
+                'content' => $content,
+                'link' => $link === null ? null : ['url' => $link],
+            ],
+            'annotations' => $this->normalizeAnnotations($annotations),
+            'plain_text' => $content,
+            'href' => $link,
+        ];
+
+        $this->items->push(new RichTextItem($item));
+        $this->plainText .= $content;
+
+        return $this;
+    }
+
+    /**
+     * Export raw rich text items in Notion API format.
+     */
+    public function toRaw(): array
+    {
+        return $this->items
+            ->map(function (RichTextItem $item) {
+                return $item->getRawResponse();
+            })
+            ->values()
+            ->all();
     }
 
     /**
@@ -269,5 +316,17 @@ class RichText extends Entity
     public function __toString(): string
     {
         return $this->getPlainText();
+    }
+
+    private function normalizeAnnotations(array $annotations): array
+    {
+        return array_merge([
+            'bold' => false,
+            'italic' => false,
+            'strikethrough' => false,
+            'underline' => false,
+            'code' => false,
+            'color' => 'default',
+        ], $annotations);
     }
 }

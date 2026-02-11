@@ -60,6 +60,31 @@ class RichTextItem extends Entity
     protected ?string $equationExpression = null;
 
     /**
+     * Create a text-type rich text item.
+     */
+    public static function fromText(string $content, array $annotations = [], ?string $link = null): self
+    {
+        return new self([
+            'type' => 'text',
+            'text' => [
+                'content' => $content,
+                'link' => $link === null ? null : ['url' => $link],
+            ],
+            'annotations' => self::normalizeAnnotations($annotations),
+            'plain_text' => $content,
+            'href' => $link,
+        ]);
+    }
+
+    /**
+     * Export the raw rich text item in Notion API format.
+     */
+    public function toRaw(): array
+    {
+        return $this->getRawResponse();
+    }
+
+    /**
      * @param array $responseData
      */
     protected function setResponseData(array $responseData): void
@@ -279,6 +304,18 @@ class RichTextItem extends Entity
     public function __toString(): string
     {
         return $this->getPlainText();
+    }
+
+    private static function normalizeAnnotations(array $annotations): array
+    {
+        return array_merge([
+            'bold' => false,
+            'italic' => false,
+            'strikethrough' => false,
+            'underline' => false,
+            'code' => false,
+            'color' => 'default',
+        ], $annotations);
     }
 }
 

@@ -24,38 +24,21 @@ class Text extends Property implements Modifiable
     {
         $textProperty = new Text();
 
-        if (is_string($text)) {
-            $richText = new RichText();
-            $richText->setPlainText($text);
-            $textProperty->plainText = $richText->getPlainText();
-            $textProperty->content = $richText;
-        } else {
-            $textProperty->plainText = $text->getPlainText();
-            $textProperty->content = $text;
-        }
+        $richText = is_string($text) ? RichText::fromPlainText($text) : $text;
 
-        //!INFO: Currently only plain_text is transfered into rawContent
-        //TODO: Later the RichText has to return it's raw structure into 'content'
-        $textProperty->rawContent = [
-            [
-                'type' => 'text',
-                'text' => [
-                    'content' => $richText->getPlainText(),
-                ],
-                'annotations' => [
-                    'bold' => false,
-                    'italic' => false,
-                    'strikethrough' => false,
-                    'underline' => false,
-                    'code' => false,
-                    'color' => 'default',
-                ],
-                'plain_text' => $richText->getPlainText(),
-                'href' => null,
-            ],
-        ];
+        $textProperty->plainText = $richText->getPlainText();
+        $textProperty->content = $richText;
+        $textProperty->rawContent = $richText->toRaw();
 
         return $textProperty;
+    }
+
+    /**
+     * Explicit helper for RichText input.
+     */
+    public static function fromRichText(RichText $text): Text
+    {
+        return self::value($text);
     }
 
     /**
