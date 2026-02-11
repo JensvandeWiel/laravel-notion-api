@@ -33,33 +33,34 @@ class Pages extends Endpoint implements EndpointInterface
 
     /**
      * @return Page
+     * @throws HandlingException
+     * @throws NotionException
      */
     public function createInDatabase(string $parentId, Page $page): Page
     {
-        $postData = [];
-        $properties = [];
-
-        foreach ($page->getProperties() as $property) {
-            $properties[$property->getTitle()] = $property->getRawContent();
-        }
-
-        $postData['parent'] = ['database_id' => $parentId];
-        $postData['properties'] = $properties;
-
-        $response = $this
-            ->post(
-                $this->url(Endpoint::PAGES),
-                $postData
-            )
-            ->json();
-
-        return new Page($response);
+        return $this->createIn($parentId, $page, 'database_id');
     }
 
     /**
      * @return Page
+     * @throws HandlingException
+     * @throws NotionException
      */
     public function createInPage(string $parentId, Page $page): Page
+    {
+        return $this->createIn($parentId, $page, 'page_id');
+    }
+
+    /**
+     * Create a page in a parent page, database or data source.
+     * @param string $parentId
+     * @param Page   $page
+     * @param string $parentType
+     * @return Page
+     * @throws HandlingException
+     * @throws NotionException
+     */
+    public function createIn(string $parentId, Page $page, string $parentType): Page
     {
         $postData = [];
         $properties = [];
@@ -68,7 +69,10 @@ class Pages extends Endpoint implements EndpointInterface
             $properties[$property->getTitle()] = $property->getRawContent();
         }
 
-        $postData['parent'] = ['page_id' => $parentId];
+        $postData['parent'] = [
+            $parentType => $parentId,
+            'type'      => $parentType,
+        ];
         $postData['properties'] = $properties;
 
         $response = $this
@@ -82,8 +86,17 @@ class Pages extends Endpoint implements EndpointInterface
     }
 
     /**
-     * @return array
+     * Create a page in a data source.
      *
+     * @return Page
+     */
+    public function createInDataSource(string $dataSourceId, Page $page): Page
+    {
+        return $this->createIn($dataSourceId, $page, 'data_source_id');
+    }
+
+    /**
+     * @return array
      * @throws HandlingException
      */
     public function update(Page $page): Page
